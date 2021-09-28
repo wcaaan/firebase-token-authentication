@@ -1,7 +1,7 @@
 <?php
 	namespace Wcaaan\FirebaseTokenAuthentication;
 	
-	use Illuminate\Support\ServiceProvider;
+	use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 	use Firebase\Auth\Token\Verifier;
 	use Auth;
 	
