@@ -1,0 +1,37 @@
+{
+    "name": "wcaaan/firebase-token-authentication",
+    "description": "Firebase token authentication driver for Laravel",
+    "keywords": [
+        "wcaaan",
+        "firebase-token-authentication"
+    ],
+    "homepage": "https://github.com/wcaaan/firebase-token-authentication",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "WCan",
+            "email": "wcaaan@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "kreait/firebase-tokens": "^1.8",
+        "lcobucci/jwt": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wcaaan\\FirebaseTokenAuthentication\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wcaaan\\FirebaseTokenAuthentication\\FirebaseTokenAuthenticationServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
