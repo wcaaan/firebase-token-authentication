@@ -25,9 +25,9 @@
 		 */
 		public function resolveByClaims(object $claims): object
 		{
-			$uid = (string)$claims->claims()->get('sub');
+			$id = (string)$claims->claims()->get('sub');
 			$attributes = $this->transformClaims($claims);
-			return $this->updateOrCreateUser($uid, $attributes);
+			return $this->updateOrCreateUser($id, $attributes);
 		}
 		
 		/**
@@ -40,7 +40,7 @@
 		 */
 		public function updateOrCreateUser($id, array $attributes): object
 		{
-			if ($user = $this->where('uid', $id)->first())
+			if ($user = $this->find($id))
 			{
 				$user->fill($attributes);
 				if ($user->isDirty())
@@ -52,7 +52,7 @@
 			}
 			
 			$user = $this->fill($attributes);
-			$user->uid = $id;
+			$user->id = $id;
 			$user->save();
 			
 			return $user;
@@ -79,6 +79,11 @@
 			if (!empty($claims->claims()->get('picture')))
 			{
 				$attributes['picture'] = (string)$claims->claims()->get('picture');
+			}
+			
+			if (!empty($claims->claims()->get('phone')))
+			{
+				$attributes['phone'] = (string)$claims->claims()->get('phone');
 			}
 			
 			return $attributes;
@@ -113,7 +118,7 @@
 		 */
 		public function getAuthIdentifierName()
 		{
-			return 'uid';
+			return 'id';
 		}
 		
 		/**
@@ -123,7 +128,7 @@
 		 */
 		public function getAuthIdentifier()
 		{
-			return $this->uid;
+			return $this->id;
 		}
 		
 		/**
