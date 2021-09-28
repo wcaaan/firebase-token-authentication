@@ -156,7 +156,6 @@
 		 *
 		 * @param string $value
 		 *
-		 * @return void
 		 */
 		public function setRememberToken($value)
 		{
