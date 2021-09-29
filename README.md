@@ -76,7 +76,7 @@ Update your authentication model. Generally it is `User`
 `public $incrementing = false;`
 
 `protected $fillable = [
-    'name', 'email', 'picture', 'phone'
+    'name', 'email', 'phone', 'image'
 ];`
 
 
@@ -108,7 +108,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'picture', 'phone'
+        'name', 'email', 'phone', 'image'
     ];
 }
 
@@ -141,7 +141,7 @@ class User extends Model implements Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'picture', 'phone'
+        'name', 'email', 'phone', 'image'
     ];
 
 }
@@ -154,7 +154,7 @@ $table->string('id')->primary();
 $table->string('name')->nullable();
 $table->string('email')->unique();
 $table->string('phone')->unique();
-$table->string('picture')->nullable();
+$table->string('image')->nullable();
 $table->timestamps();
 ```
 
