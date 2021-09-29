@@ -71,19 +71,19 @@
 				'email' => (string)$claims->claims()->get('email'),
 			];
 			
-			if (!empty($claims->claims()->get('name')))
+			if (!empty($claims->claims()->get('display_name')))
 			{
-				$attributes['name'] = (string)$claims->claims()->get('name');
+				$attributes['name'] = (string)$claims->claims()->get('display_name');
 			}
 			
-			if (!empty($claims->claims()->get('picture')))
+			if (!empty($claims->claims()->get('photo_url')))
 			{
-				$attributes['picture'] = (string)$claims->claims()->get('picture');
+				$attributes['image'] = (string)$claims->claims()->get('photo_url');
 			}
 			
 			if (!empty($claims->claims()->get('phone_number')))
 			{
-				$attributes['phone_number'] = (string)$claims->claims()->get('phone_number');
+				$attributes['phone'] = (string)$claims->claims()->get('phone_number');
 			}
 			
 			return $attributes;
