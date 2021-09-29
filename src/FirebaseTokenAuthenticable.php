@@ -81,9 +81,9 @@
 				$attributes['picture'] = (string)$claims->claims()->get('picture');
 			}
 			
-			if (!empty($claims->claims()->get('phone')))
+			if (!empty($claims->claims()->get('phone_number')))
 			{
-				$attributes['phone'] = (string)$claims->claims()->get('phone');
+				$attributes['phone_number'] = (string)$claims->claims()->get('phone_number');
 			}
 			
 			return $attributes;
